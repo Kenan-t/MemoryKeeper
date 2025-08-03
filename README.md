@@ -3,8 +3,16 @@ A cross-platform Flutter app designed to help individuals with Alzheimer's prese
 
 # Demo
 
-A walkthrough video of the app is available here:  
-[Link to Demo Video](#) 
+Below you can explore the app in two ways:
+
+- Watch a short demo video showcasing the app’s features:  
+  [Watch the demo](https://drive.google.com/file/d/1RYglfXINdpDYyMgC_S1dz_KvJWP2q5jE/view?usp=sharing)
+
+- Try the app live on the web:  
+  [Open Web Version](https://kenan-t.github.io/MemoryKeeper/)
+
+Note: This app was designed for mobile and fully supports image uploads on Android/iOS. On web, images may not persist after reload due to browser limitations and the current implementation.
+
 
 # Features
 
