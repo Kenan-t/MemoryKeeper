@@ -36,6 +36,14 @@ class MyAppState extends ChangeNotifier {
 
   void removePerson (Person person) {
     people.remove(person);
+
+    for (var memory in memories) {
+      if (memory.taggedPeople.contains(person)) {
+        memory.taggedPeople.remove(person);
+      }
+    }
+
+
     notifyListeners();
   }
 
@@ -560,6 +568,14 @@ class MemoryProfilePage extends StatelessWidget {
                 );
               });
             },
+          ),
+          IconButton(
+            icon: Icon(Icons.delete),
+            onPressed: () {
+              Provider.of<MyAppState>(context, listen: false).removeMemory(memory);
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Memory Removed')));
+            },
           )
         ],
       ),
@@ -906,6 +922,14 @@ class PersonProfilePage extends StatelessWidget {
                   SnackBar(content: Text('Person updated!'))
                 );
               });
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.delete),
+            onPressed: () {
+              Provider.of<MyAppState>(context, listen: false).removePerson(person);
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Person Deleted')));
             },
           )
         ],
